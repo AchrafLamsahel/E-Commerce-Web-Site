@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ThreeCategory } from '../entities/threeCategory';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +9,11 @@ import { Observable } from 'rxjs';
 export class ProductService {
   constructor(private http: HttpClient) { }
 
-  backendHost : string ="http://localhost:8085/products/";
+  backendHost : string ="http://localhost:8085/categories/";
 
-  //public getProductsPage(page: number, size: number): Observable<?> {
-  //  return this.http.get<?>(`${this.backendHost}page/${page}/${size}`);
-  //}
+  public getProductsPageIndex(page: number, size: number): Observable<ThreeCategory> {
+    return this.http.get<ThreeCategory>(`${this.backendHost}${page}/${size}`);
+  }
 
   
   

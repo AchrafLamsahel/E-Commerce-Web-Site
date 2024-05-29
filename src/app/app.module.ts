@@ -11,6 +11,9 @@ import { RegisterComponent } from './authorization/register/register.component';
 import { FooterComponent } from './body/footer/footer.component';
 import { ContactUsComponent } from './body/contact-us/contact-us.component';
 import { CartComponent } from './catalogue/cart/cart.component';
+import { WhyUsComponent } from './body/why-us/why-us.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,11 +26,15 @@ import { CartComponent } from './catalogue/cart/cart.component';
     ProductDetailsComponent,
     LoginComponent,
     RegisterComponent,
-    CartComponent
+    CartComponent,
+    WhyUsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule, /** offre les Gestion de l'état asynchrone , Création dynamique des formulaires, Validation avancée, Suivi des états et des erreurs , Gestion des groupes .... */
+    HttpClientModule,  /**  Offre les classes pour consummer une service Web  GET POST DELETE UPDATE.. */
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

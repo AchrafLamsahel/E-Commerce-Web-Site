@@ -1,1 +1,64 @@
-<p>all-products works!</p>
+<div *ngIf="threeCategory">
+    <div class="dropdown" *ngFor="let tree of threeCategory.categoriesTrees">
+        <button class="dropbtn">{{ tree.rootCategory.label }}</button>
+        <div class="dropdown-content">
+          <a *ngFor="let child of tree.children">{{ child.label }}</a>
+        </div>
+      </div>
+    </div>
+    <!-- product section -->
+    <div *ngIf="threeCategory.allProductsPage.elements.length > 0">
+      <section class="product_section layout_padding">
+        <div class="container">
+          <div class="heading_container heading_center">
+            <h2>
+              Our <span>Products</span>
+            </h2>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let product of threeCategory.allProductsPage.elements">
+              <div class="box">
+                <div class="option_container">
+                  <div class="options">
+                    <a href="" class="option1">
+                      Add To Cart
+                    </a>
+                    <a href="" class="option2">
+                      Buy Now
+                    </a>
+                  </div>
+                </div>
+                <div class="img-box">
+                  <img [src]="product.imageUrl" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ product.label }}
+                  </h5>
+                  <h6>
+                    {{ product.price }}$
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="pagination">
+          <li>
+            <a (click)="goToPreviousPage()" [class.disabled]="currentPage === 0"><</a>
+          </li>
+          <li *ngFor="let page of generateArray(threeCategory.allProductsPage.totalPages); let i = index">
+            <a [class.active]="i === currentPage" (click)="goToPage(i)">
+              {{ page + 1 }}
+            </a>
+          </li>
+          <li>
+            <a (click)="goToNextPage()" [class.disabled]="currentPage === threeCategory.allProductsPage.totalPages - 1">></a>
+          </li>
+        </ul>
+      </section>
+      <!-- end product section -->
+    </div>
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>

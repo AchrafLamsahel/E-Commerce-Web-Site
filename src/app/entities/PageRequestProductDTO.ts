@@ -1,7 +1,7 @@
 import { product } from "./product";
-export interface PageRequestProductDTO {
-elements : product[];
- currentPage : number;
- totalPages : number;
- totalElements : number;
+export class PageRequestProductDTO {
+    elements! : product[];
+    currentPage! : number;
+    totalPages! : number;
+    totalElements! : number;
 }
