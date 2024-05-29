@@ -6,10 +6,11 @@ import { NavbarComponent } from './body/navbar/navbar.component';
 import { IndexComponent } from './body/index/index.component';
 import { AllProductsComponent } from './catalogue/all-products/all-products.component';
 import { ProductDetailsComponent } from './catalogue/product-details/product-details.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './authorization/login/login.component';
+import { RegisterComponent } from './authorization/register/register.component';
 import { FooterComponent } from './body/footer/footer.component';
 import { ContactUsComponent } from './body/contact-us/contact-us.component';
+import { CartComponent } from './catalogue/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ContactUsComponent } from './body/contact-us/contact-us.component';
     AllProductsComponent,
     ProductDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
