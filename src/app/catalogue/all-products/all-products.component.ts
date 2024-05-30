@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ThreeCategory } from 'src/app/entities/threeCategory';
+import { CartService } from 'src/app/services/cart.service';
+import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -18,19 +20,21 @@ export class AllProductsComponent implements OnInit {
       totalElements: 0
     }
   };
+  
   errorMessage: string = '';
   currentPage = 0;
   pageSize = 12;
   totalPages = 0;
 
-  constructor(private router: Router, private productService: ProductService) { }
+  constructor(private router: Router, private productService: ProductService
+    ,private categoryService:CategoryService,private cartService:CartService) { }
 
   ngOnInit(): void {
     this.loadCategories();
   }
 
   loadCategories(): void {
-    this.productService.getProductsPageIndex(this.currentPage, this.pageSize).subscribe({
+    this.categoryService.getProductsPageIndex(this.currentPage, this.pageSize).subscribe({
       next: (items) => {
         this.threeCategory.categoriesTrees = items.categoriesTrees;
         this.threeCategory.allProductsPage = items.allProductsPage;
@@ -65,6 +69,12 @@ export class AllProductsComponent implements OnInit {
       this.currentPage++;
       this.loadCategories();
     }
+  }
+
+  @Output() addToCartEvent = new EventEmitter<any>(); // Define EventEmitter
+
+  addToCart(product: any) {
+    this.cartService.addtoCart(product);
   }
 
 }

@@ -14,6 +14,9 @@ import { CartComponent } from './catalogue/cart/cart.component';
 import { WhyUsComponent } from './body/why-us/why-us.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CheckoutComponent } from './catalogue/checkout/checkout.component';
+import { RootCategoryComponent } from './catalogue/root-category/root-category.component';
+import { SubCategoryComponent } from './catalogue/sub-category/sub-category.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     CartComponent,
-    WhyUsComponent
+    WhyUsComponent,
+    CheckoutComponent,
+    RootCategoryComponent,
+    SubCategoryComponent
   ],
   imports: [
     BrowserModule,

@@ -11,14 +11,6 @@
                    <li class="nav-item active">
                       <a class="nav-link" routerLink="/index">Home <span class="sr-only">(current)</span></a>
                    </li>
-
-                   <li class="nav-item dropdown">
-                           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></span></a>
-                           <ul class="dropdown-menu">
-                              <li>  <i class="fa fa-user-plus" aria-hidden="true"></i><a href="about.html">     About</a></li>
-                              <li><a href="testimonial.html">Testimonial</a></li>
-                           </ul>
-                        </li>
                   
                    <li class="nav-item">
                       <a class="nav-link"  routerLink="/allProducts" >Products</a>
@@ -33,6 +25,7 @@
                   </li>
                    <li class="nav-item">
                       <a class="nav-link" routerLink="/cart">
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">{{totalItem}}</span>
                          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                             <g>
                                <g>
@@ -87,16 +80,7 @@
                          </svg>
                       </a>
                    </li>
-                   <form class="form-inline">
-                      <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit" routerLink="/login">
-                      <i class="fa fa-user" aria-hidden="true"></i>
-                      </button>
-                   </form>
-                   <form class="form-inline">
-                     <button class="btn my-2 my-sm-0 nav_search-btn" type="button" [routerLink]="['/register']">
-                       <i class="fa fa-user-plus" aria-hidden="true"></i>
-                     </button>
-                   </form>
+                   
                    <!--
                         <form class="form-inline">
                            <button class="btn my-2 my-sm-0 nav_search-btn" (click)="logout()">
@@ -104,6 +88,15 @@
                            </button>
                         </form>
                    -->
+
+                   <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label"><i class="fa fa-user" aria-hidden="true"></i> <span class="caret"></span></span></a>
+                     <ul class="dropdown-menu">
+                        <li>  <i class="fa fa-user-plus" aria-hidden="true"></i><a href="about.html">     Register</a></li>
+                        <li>  <i class="fa fa-user" aria-hidden="true"></i>     Login</li>
+                        <li><a href="testimonial.html">Logout</a></li>
+                     </ul>
+                  </li>
                 </ul>
              </div>
           </nav>

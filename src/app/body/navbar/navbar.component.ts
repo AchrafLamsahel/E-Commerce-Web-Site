@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +9,35 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  public totalItem : number = 0;
+
+  constructor(
+    private router:Router, private cartService:CartService,private tokenService:TokenService){}
+
+  ngOnInit(): void {
+    this.cartService.getProducts()
+    .subscribe((res: string | any[])=>{
+      this.totalItem = res.length;
+    })
+  }
+
+  private showNavbar = true;
+
+  setShowNavbar(value: boolean) {
+       this.showNavbar = value;
+   }
+            
+    getShowNavbar() {
+       return this.showNavbar;
+    }
+  onLogOut(){
+    this.tokenService.signOut();
+    this.router.navigate(['login']);
+  }
+
+  isLoggedIn() {
+    return this.tokenService.getToken() !== null;
+  }
 /** 
   constructor(private router: Router) { }
 
