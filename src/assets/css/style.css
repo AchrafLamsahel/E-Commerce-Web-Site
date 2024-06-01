@@ -113,6 +113,7 @@ a:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+          opacity: 0.8;
 }
 
 .sub_page .hero_area {
@@ -122,7 +123,7 @@ a:focus {
 }
 
 .header_section {
-    padding: 15px 0;
+    padding: 0px 0;
 }
 
 .header_section .container-fluid {
@@ -150,19 +151,21 @@ a:focus {
 
 .custom_nav-container .navbar-nav .nav-item .nav-link {
     padding: 5px 20px;
-    color: #131313;
+    color: white;
     text-align: center;
     text-transform: uppercase;
-    border-radius: 5px;
+    border-radius: 3px;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     font-weight: 700;
+
+    padding-bottom: 3px;
 }
 
 .custom_nav-container .navbar-nav .nav-item .nav-link svg {
   width: 17px;
   height: auto;
-  fill: #000000;
+  fill: white;
   margin-bottom: 2px;
 }
 
