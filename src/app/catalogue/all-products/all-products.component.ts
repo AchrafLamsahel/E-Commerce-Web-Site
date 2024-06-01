@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { BreadcrumbDTO } from 'src/app/entities/BreadcrumbDTO';
 import { ThreeCategory } from 'src/app/entities/threeCategory';
 import { CartService } from 'src/app/services/cart.service';
 import { CategoryService } from 'src/app/services/category.service';
@@ -14,20 +15,25 @@ export class AllProductsComponent implements OnInit {
   threeCategory: ThreeCategory = {
     categoriesTrees: [],
     allProductsPage: {
-      elements: [],
+      productInfDTOS: [],
       currentPage: 0,
       totalPages: 0,
       totalElements: 0
     }
   };
-  
+
   errorMessage: string = '';
   currentPage = 0;
   pageSize = 12;
   totalPages = 0;
+  productSlug: any;
 
-  constructor(private router: Router, private productService: ProductService
-    ,private categoryService:CategoryService,private cartService:CartService) { }
+  constructor(
+    private router: Router,
+    private productService: ProductService,
+    private categoryService: CategoryService,
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
     this.loadCategories();
@@ -36,10 +42,11 @@ export class AllProductsComponent implements OnInit {
   loadCategories(): void {
     this.categoryService.getProductsPageIndex(this.currentPage, this.pageSize).subscribe({
       next: (items) => {
+        console.log(items)
         this.threeCategory.categoriesTrees = items.categoriesTrees;
         this.threeCategory.allProductsPage = items.allProductsPage;
         this.currentPage = items.allProductsPage.currentPage;
-        console.log(items);
+
       },
       error: (err) => {
         this.errorMessage = `Error: ${err.message}`;
@@ -59,7 +66,7 @@ export class AllProductsComponent implements OnInit {
 
   goToPreviousPage() {
     if (this.currentPage > 0) {
-      this.currentPage--; 
+      this.currentPage--;
       this.loadCategories();
     }
   }
@@ -71,10 +78,21 @@ export class AllProductsComponent implements OnInit {
     }
   }
 
-  @Output() addToCartEvent = new EventEmitter<any>(); // Define EventEmitter
+  @Output() addToCartEvent = new EventEmitter<any>();
 
   addToCart(product: any) {
     this.cartService.addtoCart(product);
   }
 
+  goToRootCategory(rootSlug: string): void {
+    this.router.navigate([`/${rootSlug}`]);
+  }
+
+  goToSubCategory(rootSlug: string, subSlug: string): void {
+    this.router.navigate([`/${rootSlug}/${subSlug}`]);
+  }
+
+  gotToProduct(rootSlug: string, subSlug: string, productSlug: string): void {
+    this.router.navigate([`/${rootSlug}/${subSlug}/${productSlug}`]);
+  }
 }

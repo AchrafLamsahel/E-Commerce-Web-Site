@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ThreeCategory } from '../entities/threeCategory';
 import { HttpClient } from '@angular/common/http';
-import { product } from '../entities/product';
+import { Product } from '../entities/Product';
 import { ProductDetailsDTO } from '../entities/ProductDetailsDTO';
 import { PageRequestProductDTO } from '../entities/PageRequestProductDTO';
 
@@ -14,8 +14,8 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllProducts(): Observable<product[]> {
-    return this.http.get<product[]>(`${this.backendHost}`);
+  public getAllProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.backendHost}`);
   }
 
   public getProductBySlug(productSlug: string): Observable<ProductDetailsDTO> {

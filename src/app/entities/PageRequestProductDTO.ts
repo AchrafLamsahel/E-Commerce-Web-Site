@@ -1,6 +1,7 @@
-import { product } from "./product";
+import { Product } from "./Product";
+import { ProductInfDTO } from "./ProductInfDTO";
 export class PageRequestProductDTO {
-    elements! : product[];
+    productInfDTOS!: ProductInfDTO[];
     currentPage! : number;
     totalPages! : number;
     totalElements! : number;

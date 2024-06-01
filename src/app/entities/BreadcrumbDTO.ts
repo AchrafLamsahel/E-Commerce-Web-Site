@@ -1,4 +1,4 @@
 export class BreadcrumbDTO {
-    private url!            : string;
-    private categoryLabel!  : string;
+    public url!            : string;
+    public categoryLabel!  : string;
 }
