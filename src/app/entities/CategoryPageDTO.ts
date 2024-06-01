@@ -1,10 +1,10 @@
 import { BreadcrumbDTO } from "./BreadcrumbDTO";
 import { Category } from "./category";
-import { product } from "./product";
+import { Product } from "./Product";
 
 export class CategoryPageDTO {
     rootCategory!   : Category;
     subCategories!  : Category[];
-    products!       : product[];
+    products!       : Product[];
     breadcrumbDTO  : BreadcrumbDTO[] = [];
 }
