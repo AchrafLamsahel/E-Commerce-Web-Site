@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryPageDTO } from 'src/app/entities/CategoryPageDTO';
 import { Category } from 'src/app/entities/category';
@@ -42,8 +42,10 @@ export class SubCategoryComponent implements OnInit {
       console.log("Error: rootSlug is empty");
     }
   }
+  @Output() addToCartEvent = new EventEmitter<any>(); // Define EventEmitter
 
   addToCart(product: any) {
     this.cartService.addtoCart(product);
+    console.log(this.cartService.cartItemList)
   }
 }

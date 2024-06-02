@@ -13,4 +13,6 @@ export class AuthorizationService {
   login(email : string,password: string): Observable<any> {
      return this.http.post(AUTH_API,{email,password,},httpOptions); 
     }
+
+  
 }

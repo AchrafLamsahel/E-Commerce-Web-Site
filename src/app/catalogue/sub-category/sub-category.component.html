@@ -25,17 +25,7 @@
      </div>
      <div class="row">
         <div class="col-sm-6 col-md-4 col-lg-4" *ngFor="let product of categoryPageDto.subCategories">
-           <div class="box">
-              <div class="option_container">
-                 <div class="options">
-                    <a href="" class="option1">
-                       Add To Cart
-                    </a>
-                    <a href="" class="option2">
-                       Buy Now
-                    </a>
-                 </div>
-              </div>
+           
               <div class="img-box">
                  <img [src]="product.imageUrl" alt="{{ product.label }}">
               </div>
@@ -50,7 +40,6 @@
            </div>
         </div>
      </div>
-  </div>
   
   <div *ngIf="categoryPageDto.products.length > 0">
     <section class="product_section layout_padding">
@@ -63,16 +52,6 @@
         <div class="row">
           <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let product of categoryPageDto.products">
             <div class="box">
-              <div class="option_container">
-                <div class="options">
-                  <a class="option1" (click)="addToCart(product)">
-                    Add To Cart
-                  </a>
-                  <a href="" class="option2">
-                    Buy Now
-                  </a>
-                </div>
-              </div>
               <div class="img-box">
                 <img [src]="product.imageUrl" alt="">
               </div>
@@ -83,6 +62,11 @@
                 <h6>
                   {{ product.price }} $
                 </h6>
+                </div>
+                <div class="options">
+                <a class="option1" (click)="addToCart(product)">
+                  Add To Cart
+                </a>
               </div>
             </div>
           </div>
