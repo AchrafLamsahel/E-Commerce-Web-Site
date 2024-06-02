@@ -82,6 +82,7 @@ export class AllProductsComponent implements OnInit {
 
   addToCart(product: any) {
     this.cartService.addtoCart(product);
+    console.log(this.cartService.cartItemList)
   }
 
   goToRootCategory(rootSlug: string): void {

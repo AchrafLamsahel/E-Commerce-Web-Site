@@ -42,7 +42,6 @@ export class CartComponent implements OnInit{
     item.total = item.quantity * item.price;
     this.cartService.updateCartItem(item);
     this.grandTotal = this.cartService.getTotalPrice();
-    this.cartService.getProducts();
   }
 
   decrementQuantity(item: any) {
@@ -52,7 +51,6 @@ export class CartComponent implements OnInit{
       item.total = item.quantity * item.price;
       this.cartService.updateCartItem(item);
       this.grandTotal = this.cartService.getTotalPrice();
-      this.cartService.getProducts();
     }
   }
 

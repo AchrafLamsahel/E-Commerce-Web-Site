@@ -377,7 +377,7 @@
          </h2>
       </div>
       <div class="row">
-         <div class="col-sm-6 col-md-4 col-lg-4" *ngFor="let product of categories">
+         <div class="col-sm-6 col-md-4 col-lg-4" *ngFor="let cat of categories">
             <div class="box">
                <div class="option_container">
                   <div class="options">
@@ -390,14 +390,14 @@
                   </div>
                </div>
                <div class="img-box">
-                  <img [src]="product.imageUrl" alt="{{ product.label }}">
+                  <img [src]="cat.imageUrl" alt="{{ cat.label }}">
                </div>
                <div class="detail-box">
                   <h5>
-                     {{ product.label }}
+                     {{ cat.label }}
                   </h5>
                   <h6>
-                     ${{ product.valid }}
+                     ${{ cat.valid }}
                   </h6>
                </div>
             </div>

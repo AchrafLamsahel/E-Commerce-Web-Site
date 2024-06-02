@@ -14,7 +14,7 @@ export class CategoryService {
   backendHost : string ="http://localhost:8085/categories/";
 
   public getAllCategories(page: number, size: number):Observable<PageRequestCategoryDTO>{
-    return this.http.get<PageRequestCategoryDTO>(`${this.backendHost}${page}/${size}`)
+    return this.http.get<PageRequestCategoryDTO>(`${this.backendHost}page/${page}/${size}`)
   }
 
   public getProductsPageIndex(page: number, size: number): Observable<ThreeCategory> {

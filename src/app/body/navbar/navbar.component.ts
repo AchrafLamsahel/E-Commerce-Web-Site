@@ -10,6 +10,7 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class NavbarComponent {
   public totalItem : number = 0;
+  isAuthenticated! : boolean;
 
   constructor(
     private router:Router, private cartService:CartService,private tokenService:TokenService){}
@@ -32,12 +33,15 @@ export class NavbarComponent {
     }
   onLogOut(){
     this.tokenService.signOut();
-    this.router.navigate(['login']);
+    this.router.navigate(['index']);
   }
 
   isLoggedIn() {
     return this.tokenService.getToken() !== null;
+
   }
+
+ 
 /** 
   constructor(private router: Router) { }
 

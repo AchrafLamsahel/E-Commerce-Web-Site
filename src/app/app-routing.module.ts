@@ -9,19 +9,22 @@ import { AllProductsComponent } from './catalogue/all-products/all-products.comp
 import { RootCategoryComponent } from './catalogue/root-category/root-category.component';
 import { SubCategoryComponent } from './catalogue/sub-category/sub-category.component';
 import { ProductDetailsComponent } from './catalogue/product-details/product-details.component';
+import { RegisterComponent } from './authorization/register/register.component';
+import { CheckoutComponent } from './catalogue/checkout/checkout.component';
 
 const routes: Routes = [
   { path : '' ,redirectTo:'index', pathMatch: 'full' },
-  {path:"index" , component:IndexComponent},
-  {path:"contact-us" , component:ContactUsComponent},
-  {path : "login" , component : LoginComponent},
-  {path : "cart" , component : CartComponent},
-  {path : "about-us" , component : WhyUsComponent},
-  {path : "allProducts" , component : AllProductsComponent},
-  {path: ':rootSlug', component: RootCategoryComponent},
-  {path: ':rootSlug/:subSlug',component: SubCategoryComponent},
-  {path: ':rootSlug/:subSlug/:productSlug',component: ProductDetailsComponent}
-
+  { path : "index" , component:IndexComponent},
+  { path : "contact-us" , component:ContactUsComponent},
+  { path : "login" , component : LoginComponent},
+  { path : "cart" , component : CartComponent},
+  { path : "register",component:RegisterComponent},
+  { path : "checkout",component:CheckoutComponent},
+  { path : "about-us" , component : WhyUsComponent},
+  { path : "allProducts" , component : AllProductsComponent},
+  { path : ':rootSlug', component: RootCategoryComponent},
+  { path : ':rootSlug/:subSlug',component: SubCategoryComponent},
+  { path : ':rootSlug/:subSlug/:productSlug',component: ProductDetailsComponent}
 ];
 
 @NgModule({
