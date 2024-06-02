@@ -11,7 +11,7 @@
 }
 
 .pagination a.active{
-	background-color: #AAE925;
+	background-color: #0d6efd;
 	font-weight: bold;
 	border-radius: 3px;
     
@@ -138,7 +138,7 @@ button {
     display: block;
     padding: 10px 15px;
     text-decoration: none;
-    color: #AAE925;
+    color: #0d6efd;
     border: 1px solid #ddd;
     border-radius: 4px;
     transition: background-color 0.3s, color 0.3s;
@@ -150,9 +150,9 @@ button {
   }
   
   .pagination a.active {
-    background-color: #AAE925;
+    background-color: #0d6efd;
     color: white;
-    border-color: #AAE925;
+    border-color: #0d6efd;
   }
   
   .pagination a.disabled {
@@ -163,7 +163,7 @@ button {
 
   /* Dropdown Button */
 .dropbtn {
-  background-color: #AAE925;
+  background-color: #0d6efd;
   color: white;
   padding: 16px;
   font-size: 16px;
