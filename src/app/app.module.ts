@@ -17,6 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CheckoutComponent } from './catalogue/checkout/checkout.component';
 import { RootCategoryComponent } from './catalogue/root-category/root-category.component';
 import { SubCategoryComponent } from './catalogue/sub-category/sub-category.component';
+import { UserProfilComponent } from './catalogue/user-profil/user-profil.component';
+import { NotfountComponent } from './errors/notfount/notfount.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { SubCategoryComponent } from './catalogue/sub-category/sub-category.comp
     WhyUsComponent,
     CheckoutComponent,
     RootCategoryComponent,
-    SubCategoryComponent
+    SubCategoryComponent,
+    UserProfilComponent,
+    NotfountComponent
   ],
   imports: [
     BrowserModule,

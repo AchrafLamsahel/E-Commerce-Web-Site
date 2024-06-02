@@ -11,20 +11,28 @@ import { SubCategoryComponent } from './catalogue/sub-category/sub-category.comp
 import { ProductDetailsComponent } from './catalogue/product-details/product-details.component';
 import { RegisterComponent } from './authorization/register/register.component';
 import { CheckoutComponent } from './catalogue/checkout/checkout.component';
+import { AuthtorizationGuard } from './authorization/guards/authtorization.guard';
+import { UserProfilComponent } from './catalogue/user-profil/user-profil.component';
+import { NotfountComponent } from './errors/notfount/notfount.component';
 
 const routes: Routes = [
+  
   { path : '' ,redirectTo:'index', pathMatch: 'full' },
   { path : "index" , component:IndexComponent},
   { path : "contact-us" , component:ContactUsComponent},
   { path : "login" , component : LoginComponent},
   { path : "cart" , component : CartComponent},
   { path : "register",component:RegisterComponent},
-  { path : "checkout",component:CheckoutComponent},
   { path : "about-us" , component : WhyUsComponent},
+  { path : "checkout",component:CheckoutComponent,canActivate: [AuthtorizationGuard]},
+  { path : "profilUser" , component : UserProfilComponent, canActivate:[AuthtorizationGuard]},
+  
   { path : "allProducts" , component : AllProductsComponent},
   { path : ':rootSlug', component: RootCategoryComponent},
   { path : ':rootSlug/:subSlug',component: SubCategoryComponent},
-  { path : ':rootSlug/:subSlug/:productSlug',component: ProductDetailsComponent}
+  { path : ':rootSlug/:subSlug/:productSlug',component: ProductDetailsComponent},
+  { path: '**', component: NotfountComponent },
+
 ];
 
 @NgModule({

@@ -1,34 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Login Application E-Shopping</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+  <!-- inner page section -->
+  <section class="inner_page_head">
+    <div class="container_fuild">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="full">
+            <h3>Login</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end inner page section -->
 
-      <!-- inner page section -->
-      <section class="inner_page_head">
-        <div class="container_fuild">
-           <div class="row">
-              <div class="col-md-12">
-                 <div class="full">
-                    <h3> Login </h3>
-                 </div>
-              </div>
-           </div>
+  <!-- why section -->
+  <section class="why_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="full">
+            <div *ngIf="errorMessage" class="alert alert-danger" role="alert">{{errorMessage}}</div>
+            <form [formGroup]="form" (ngSubmit)="submit()">
+              <fieldset>
+                <input formControlName="email" type="email" placeholder="Enter your email address" name="email" required />
+                <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['email'].errors != null && f['email'].errors['required']">Email obligatoire.</div>
+                </div>
+                
+                <input formControlName="password" type="password" placeholder="Enter your password" name="password" required />
+                <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['password'].errors != null && f['password'].errors['required']">Mot de passe obligatoire.</div>
+                </div>
+                
+                <input type="submit" value="Login" class="custom-button" />
+              </fieldset>
+            </form>
+          </div>
         </div>
-     </section>
-     <!-- end inner page section -->
-     <!-- why section -->
-     <section class="why_section layout_padding">
-        <div class="container">
-           <div class="row">
-              <div class="col-lg-8 offset-lg-2">
-                 <div class="full">
-                    <form action="index.html">
-                       <fieldset>
-                          <input type="email" placeholder="Enter your email address" name="email" required />
-                          <input type="password" placeholder="Enter your password" name="subject" required />
-                          <input type="submit" value="Login" />
-                       </fieldset>
-                    </form>
-                 </div>
-              </div>
-           </div>
-        </div>
-     </section>
-     <!-- end why section -->
-    
+      </div>
+    </div>
+  </section>
+  <!-- end why section -->
+<!--
+  <style>
+    .custom-button {
+      background-color: #0d6efd; /* Changez cette valeur par la couleur de votre choix */
+      color: #FFFFFF; /* Couleur du texte */
+      border: none;
+      padding: 10px 20px; /* Ajustez le rembourrage selon vos préférences */
+      border-radius: 5px; /* Ajustez le rayon selon vos préférences */
+      font-size: 16px; /* Ajustez la taille de police selon vos préférences */
+    }
+  </style>
+  -->
+</body>
+</html>
