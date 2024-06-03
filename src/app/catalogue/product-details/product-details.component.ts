@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/entities/Product';
 import { ProductDetailsDTO } from 'src/app/entities/ProductDetailsDTO';
 import { Category } from 'src/app/entities/category';
@@ -28,7 +28,7 @@ export class ProductDetailsComponent implements OnInit {
   i=0;
 
   constructor(private route: ActivatedRoute, private cartService: CartService,
-              private productService:ProductService ) { }
+              private productService:ProductService,private router:Router ) { }
 
   ngOnInit(): void {
     const rootSlug: string = this.route.snapshot.paramMap.get('productSlug') || '';
@@ -51,4 +51,17 @@ export class ProductDetailsComponent implements OnInit {
   addToCart(product: any) {
     this.cartService.addtoCart(product);
   }
+
+  goToRootCategory(rootSlug: string): void {
+    this.router.navigate([`/${rootSlug}`]);
+  }
+
+  goToSubCategory(rootSlug: string, subSlug: string): void {
+    this.router.navigate([`/${rootSlug}/${subSlug}`]);
+  }
+
+  gotToProduct(rootSlug: string, subSlug: string, productSlug: string): void {
+    this.router.navigate([`/${rootSlug}/${subSlug}/${productSlug}`]);
+  }
+
 }

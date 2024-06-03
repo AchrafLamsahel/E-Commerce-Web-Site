@@ -30,7 +30,6 @@ export class AllProductsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private productService: ProductService,
     private categoryService: CategoryService,
     private cartService: CartService
   ) { }

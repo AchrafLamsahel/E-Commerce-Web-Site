@@ -7,7 +7,7 @@
       <li *ngIf="!last">
         <a [routerLink]="[breadcrumb.url]">{{ breadcrumb.categoryLabel }}</a>
       </li>
-      <li *ngIf="last" class="active" style="color: #f7444e;">
+      <li *ngIf="last" class="active" style="color: #000000;">
         >> {{ breadcrumb.categoryLabel }}
       </li>
     </ng-container>
@@ -15,35 +15,10 @@
 </div>
 
     
-<!-- product section -->
-<section class="product_section layout_padding">
-  <div class="container">
-     <div class="heading_container heading_center">
-        <h2>
-           Our <span>Categories</span>
-        </h2>
-     </div>
-     <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-4" *ngFor="let product of categoryPageDto.subCategories">
-           
-              <div class="img-box">
-                 <img [src]="product.imageUrl" alt="{{ product.label }}">
-              </div>
-              <div class="detail-box">
-                 <h5>
-                    {{ product.label }}
-                 </h5>
-                 <h6>
-                    ${{ product.valid }}
-                 </h6>
-              </div>
-           </div>
-        </div>
-     </div>
   
   <div *ngIf="categoryPageDto.products.length > 0">
     <section class="product_section layout_padding">
-      <div class="container">categories
+      <div class="container">
         <div class="heading_container heading_center">
           <h2>
             Our <span>Products</span>
@@ -51,7 +26,7 @@
         </div>
         <div class="row">
           <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let product of categoryPageDto.products">
-            <div class="box">
+            <div class="box" (click)="gotToProduct(product.slug)">
               <div class="img-box">
                 <img [src]="product.imageUrl" alt="">
               </div>

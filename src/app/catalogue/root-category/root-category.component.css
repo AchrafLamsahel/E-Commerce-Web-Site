@@ -215,7 +215,7 @@ ul.breadcumb li a {
   line-height: 24px;
   display: flex;
   align-items: center;
-  color: #333333;
+  color: #0d6efd;
   text-decoration: none;
 }
 ul.breadcumb li:not(:last-child):after {
@@ -235,7 +235,7 @@ section.product {
 .product .box-img,
 .slide-product ul li {
   width: 100%;
-  background-color: #F5F5F5;
+  background-color: #ffffff;
   margin-bottom: 1rem;
   position: relative;
 }
@@ -276,7 +276,7 @@ section.product {
   font-family: 'Poppins-300';
   font-size: 1rem;
   line-height: inherit;
-  color: #333333;
+  color: #0d6efd;
   margin-bottom: 2rem;
 }
 .items {

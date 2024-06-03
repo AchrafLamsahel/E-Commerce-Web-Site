@@ -7,7 +7,7 @@
       <li *ngIf="!last">
         > ><a [routerLink]="[breadcrumb.url]">{{ breadcrumb.categoryLabel }}</a>
       </li>
-      <li *ngIf="last" class="active" style="color: #f7444e;">
+      <li *ngIf="last" class="active" style="color: #000000;">
         >> {{ breadcrumb.categoryLabel }}
       </li>
     </ng-container>
@@ -17,7 +17,7 @@
 <html>
 <body>
   <main>
-    <div class="card">
+    <div class="card" >
       <div class="card__title">
         <div class="icon">
           <a href="#"><i class="fa fa-arrow-left"></i></a>
@@ -27,17 +27,17 @@
       <div class="card__body">
         <div class="half">
           <div class="featured_text">
-            <h1>Nurton</h1>
+            <h1>{{productPageDto.product.productTitle}}</h1>
             <p class="sub">Office Chair</p>
-            <p class="price">$210.00</p>
+            <p class="price">${{productPageDto.product.price}}</p>
           </div>
           <div class="image">
-            <img src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg" alt="">
+            <img [src]="productPageDto.product.imageUrl" alt="">
           </div>
         </div>
         <div class="half">
           <div class="description">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptatem nam pariatur voluptate perferendis, asperiores aspernatur! Porro similique consequatur, nobis soluta minima, quasi laboriosam hic cupiditate perferendis esse numquam magni.</p>
+            <p>{{productPageDto.product.description}}.</p>
           </div>
           <span class="stock"><i class="fa fa-pen"></i> In stock</span>
           <div class="reviews">
@@ -58,7 +58,7 @@
           <h3>Andrew Palmer</h3>
         </div>
         <div class="action">
-          <button type="button">Add to cart</button>
+          <button type="button" (click)="addToCart(productPageDto.product)">Add to cart</button>
         </div>
       </div>
     </div>
