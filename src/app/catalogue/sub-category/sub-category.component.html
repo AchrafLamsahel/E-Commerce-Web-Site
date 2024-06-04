@@ -3,12 +3,12 @@
  <div *ngIf="categoryPageDto">
   <ul class="breadcrumb">
     <li><a routerLink="/allProducts">Catégories</a></li>
-     > > <ng-container *ngFor="let breadcrumb of categoryPageDto.breadcrumbDTO; let last = last">
+        <ng-container *ngFor="let breadcrumb of categoryPageDto.breadcrumbDTO; let last = last">
       <li *ngIf="!last">
         <a [routerLink]="[breadcrumb.url]">{{ breadcrumb.categoryLabel }}</a>
       </li>
       <li *ngIf="last" class="active" style="color: #000000;">
-        >> {{ breadcrumb.categoryLabel }}
+         {{ breadcrumb.categoryLabel }}
       </li>
     </ng-container>
   </ul>

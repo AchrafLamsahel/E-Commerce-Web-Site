@@ -3,10 +3,10 @@
   <br>
   <div *ngIf="categoryPageDto">
     <ul class="breadcrumb">
-      <li>> ><a routerLink="/allProducts">Catégories</a></li>
+      <li><a routerLink="/allProducts">Catégories</a></li>
       <ng-container *ngFor="let breadcrumb of categoryPageDto.breadcrumbDTO; let i = index">
         <li *ngIf="i === 0">
-         > > <a [routerLink]="[breadcrumb.url]" style="color: #000000;">{{ breadcrumb.categoryLabel }}</a>
+          <a [routerLink]="[breadcrumb.url]" style="color: #000000;">{{ breadcrumb.categoryLabel }}</a>
         </li>
       </ng-container>
     </ul>
