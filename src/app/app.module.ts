@@ -13,7 +13,7 @@ import { ContactUsComponent } from './body/contact-us/contact-us.component';
 import { CartComponent } from './catalogue/cart/cart.component';
 import { WhyUsComponent } from './body/why-us/why-us.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckoutComponent } from './catalogue/checkout/checkout.component';
 import { RootCategoryComponent } from './catalogue/root-category/root-category.component';
 import { SubCategoryComponent } from './catalogue/sub-category/sub-category.component';
@@ -49,7 +49,8 @@ import { ChangePasswordComponent } from './authorization/change-password/change-
     AppRoutingModule,
     ReactiveFormsModule, /** offre les Gestion de l'état asynchrone , Création dynamique des formulaires, Validation avancée, Suivi des états et des erreurs , Gestion des groupes .... */
     HttpClientModule,  /**  Offre les classes pour consummer une service Web  GET POST DELETE UPDATE.. */
-    HttpClientModule
+    HttpClientModule,
+    FormsModule // Add FormsModule here
   ],
   providers: [],
   bootstrap: [AppComponent]
