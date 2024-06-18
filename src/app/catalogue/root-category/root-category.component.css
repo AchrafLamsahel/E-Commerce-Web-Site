@@ -574,3 +574,9 @@ img.demo-img {
   padding: 0 0.5rem;
   color: #6c757d;
 }
+.no-products-message {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: #777;
+}

@@ -19,6 +19,9 @@ import { RootCategoryComponent } from './catalogue/root-category/root-category.c
 import { SubCategoryComponent } from './catalogue/sub-category/sub-category.component';
 import { UserProfilComponent } from './catalogue/user-profil/user-profil.component';
 import { NotfountComponent } from './errors/notfount/notfount.component';
+import { ResetPasswordComponent } from './authorization/reset-password/reset-password.component';
+import { ChangePasswordComponent } from './authorization/change-password/change-password.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import { NotfountComponent } from './errors/notfount/notfount.component';
     RootCategoryComponent,
     SubCategoryComponent,
     UserProfilComponent,
-    NotfountComponent
+    NotfountComponent,
+    ResetPasswordComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

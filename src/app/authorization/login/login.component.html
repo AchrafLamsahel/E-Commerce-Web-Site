@@ -29,7 +29,7 @@
             <div *ngIf="errorMessage" class="alert alert-danger" role="alert">{{errorMessage}}</div>
             <form [formGroup]="form" (ngSubmit)="submit()">
               <fieldset>
-                <input formControlName="email" type="email" placeholder="Enter your email address" name="email" required />
+                <input formControlName="email" type="email" placeholder="Enter your email address" name="email" required/>
                 <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
                   <div *ngIf="f['email'].errors != null && f['email'].errors['required']">Email obligatoire.</div>
                 </div>
@@ -38,27 +38,14 @@
                 <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
                   <div *ngIf="f['password'].errors != null && f['password'].errors['required']">Mot de passe obligatoire.</div>
                 </div>
-                
+                 <a routerLink="/reset-password">Forgot Your Password ?</a>
                 <input type="submit" value="Login" class="custom-button" />
               </fieldset>
             </form>
           </div>
-        </div>
+        </div> 
       </div>
     </div>
   </section>
-  <!-- end why section -->
-<!--
-  <style>
-    .custom-button {
-      background-color: #0d6efd; /* Changez cette valeur par la couleur de votre choix */
-      color: #FFFFFF; /* Couleur du texte */
-      border: none;
-      padding: 10px 20px; /* Ajustez le rembourrage selon vos préférences */
-      border-radius: 5px; /* Ajustez le rayon selon vos préférences */
-      font-size: 16px; /* Ajustez la taille de police selon vos préférences */
-    }
-  </style>
-  -->
 </body>
 </html>

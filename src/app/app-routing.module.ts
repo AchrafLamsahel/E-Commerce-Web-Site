@@ -14,6 +14,9 @@ import { CheckoutComponent } from './catalogue/checkout/checkout.component';
 import { AuthtorizationGuard } from './authorization/guards/authtorization.guard';
 import { UserProfilComponent } from './catalogue/user-profil/user-profil.component';
 import { NotfountComponent } from './errors/notfount/notfount.component';
+import { ChangePasswordComponent } from './authorization/change-password/change-password.component';
+import { ResetPasswordComponent } from './authorization/reset-password/reset-password.component';
+
 
 const routes: Routes = [
   
@@ -26,12 +29,15 @@ const routes: Routes = [
   { path : "about-us" , component : WhyUsComponent},
   { path : "checkout",component:CheckoutComponent,canActivate: [AuthtorizationGuard]},
   { path : "profilUser" , component : UserProfilComponent, canActivate:[AuthtorizationGuard]},
-  
   { path : "allProducts" , component : AllProductsComponent},
+  { path : 'reset-password',component:ResetPasswordComponent},
+  { path : 'change-password',component:ChangePasswordComponent},
   { path : ':rootSlug', component: RootCategoryComponent},
   { path : ':rootSlug/:subSlug',component: SubCategoryComponent},
   { path : ':rootSlug/:subSlug/:productSlug',component: ProductDetailsComponent},
+
   { path: '**', component: NotfountComponent },
+
 
 ];
 
